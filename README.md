@@ -68,7 +68,13 @@ The name of your validator.
 **<-- SET THE REST OF THESE AFTER YOU LOG OUT / LOG BACK IN -->**
 
 ```
-GENESIS_URL = https://raw.githubusercontent.com/terra-money/testnet/master/tequila-0004/genesis.json 
+GENESIS_URLs:
+
+# tequila-0004: 
+https://raw.githubusercontent.com/terra-money/testnet/master/tequila-0004/genesis.json
+
+# bombay-9: 
+https://raw.githubusercontent.com/terra-money/testnet/master/bombay-9/genesis.json 
 ```
 Quick download of Genesis Doc.
 
@@ -121,14 +127,7 @@ sudo apt install -y build-essential wget liblz4-tool aria2 jq gcc g++ make aria2
 Installing it via apt-get without the below step will install an older version. You want to install Nodejs LTS always [(currently v14)](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
 ```
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-
-curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-
-echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
-sudo apt-get update && sudo apt install -y yarn nodejs npm
-sudo npm i -g pm2
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null && echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt-get update && sudo apt install -y yarn nodejs npm && sudo npm i -g pm2
 ```
 
 ### Install Go and golangcli-lint
@@ -509,6 +508,16 @@ npm start vote -- \
 
 **Done!**
 
-### Need to Figure Out:
+### Need to Figure Out + Errors:
 
-- run validator, oracle, and feeder at same time
+
+- It is confirmed that if the staking amount is not enough then gentx will not generate the validator and it will lead to this error.
+
+- Error: error during handshake: error on replay: validator set is nil in genesis and still empty after InitChain
+
+
+### Notes
+
+- For Bombay, you can increase (a lot) the values of max_subscription_clients, max_num_inbound_peers, 
+max_num_outbound_peers and max_open_connections in config.toml to speed up the process
+like 100/130/130/30
