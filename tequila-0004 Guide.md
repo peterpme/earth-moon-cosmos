@@ -127,7 +127,29 @@ sudo apt install -y build-essential wget liblz4-tool aria2 jq gcc g++ make aria2
 Installing it via apt-get without the below step will install an older version. You want to install Nodejs LTS always [(currently v14)](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
 ```
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null && echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt-get update && sudo apt install -y yarn nodejs npm && sudo npm i -g pm2
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+```
+
+
+```
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+```
+
+
+```
+echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+```
+
+```
+sudo apt-get update && sudo apt install -y yarn
+```
+
+```
+sudo apt install nodejs
+```
+
+```
+sudo npm i -g pm2
 ```
 
 ### Install Go and golangcli-lint
