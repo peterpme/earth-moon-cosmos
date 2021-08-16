@@ -510,11 +510,13 @@ npm start vote -- \
 
 ### Need to Figure Out + Errors:
 
-
 - It is confirmed that if the staking amount is not enough then gentx will not generate the validator and it will lead to this error.
 
 - Error: error during handshake: error on replay: validator set is nil in genesis and still empty after InitChain
 
+### Troubleshooting
+- Error: - It is confirmed that if the staking amount is not enough then gentx will not generate the validator and it will lead to this error.
+  Noticed this error here: https://github.com/terra-money/core/issues/131. By making sure you have the right genesis.json file set, this should go away.
 
 ### Notes
 
