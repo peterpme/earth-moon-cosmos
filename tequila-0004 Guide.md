@@ -59,9 +59,6 @@ sudo adduser $USER
 sudo usermod -aG sudo $USER
 ``` 
 
-```
-su - $USER
-``` 
 </details>
 
 ### Set Variables (optional)
@@ -130,12 +127,16 @@ When we say LUNA AMOUNT, typically uLuna
 </details>
     
 ### Install Dependencies
+
 Login to USER.
+
+<details open>
 
 ```
 sudo apt install -y build-essential wget liblz4-tool aria2 jq gcc g++ make aria2
 ```
 
+</details>
 
 ### Install NodeJS and Yarn
 
