@@ -237,7 +237,7 @@ cd ~/.terrad
 Get most recent snapshot from [Chainlayer Quicksync] (https://terra.quicksync.io/).
 
 ```
-aria2c -x5 https://get.quicksync.io/tequila-4-default.20210801.0940.tar.lz4 
+aria2c -x5 https://get.quicksync.io/tequila-4-default.20210816.0940.tar.lz4 
 ```
 
 ```
