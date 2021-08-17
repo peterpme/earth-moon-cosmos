@@ -50,7 +50,7 @@ USER = <user>
 ```
 
 ```
-adduser -aG sudo -m -U $USER
+sudo adduser -aG sudo -m -U $USER
 ``` 
 
 ### Set Variables
