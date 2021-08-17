@@ -254,8 +254,11 @@ vim ~/.terrad/config/app.toml
 ```
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,1.25udkk”
 ```
+</details>
 
 ### Download Snapshot
+
+<details open>
 
 ```
 cd ~/.terrad
@@ -272,11 +275,17 @@ Unpacking may take a while - unsure if the command stops running (recommended to
 lz4 -c -d {SNAPSHOT_FILE} | tar xf -
 ```
 
+</details>
+
 ### Begin Node Sync
+
+<details open>
 
 ```
 curl https://network.terra.dev/testnet/addrbook.json > $HOME/.terrad/config/addrbook.json && terrad start
 ```
+
+</details>
 
 ### Begin pm2 Process Manager
 
