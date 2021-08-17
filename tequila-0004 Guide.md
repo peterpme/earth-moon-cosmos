@@ -496,7 +496,7 @@ fiatProvider: {
 ```
 
 ```
-npm install @opentelemetry && npm run start
+npm install @opentelemetry/api && npm run start
 ```
 
 ### Set the Oracle Price Feeder
