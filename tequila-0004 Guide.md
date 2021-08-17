@@ -239,6 +239,7 @@ Get most recent snapshot from [Chainlayer Quicksync] (https://terra.quicksync.io
 ```
 aria2c -x5 https://get.quicksync.io/tequila-4-default.20210816.0940.tar.lz4 
 ```
+Unpacking may take a while - unsure if the command stops running (recommended to stop running after 3 hours max). 
 
 ```
 lz4 -c -d {SNAPSHOT_FILE} | tar xf -
