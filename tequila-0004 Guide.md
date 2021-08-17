@@ -62,6 +62,9 @@ su - $USER
 ``` 
 
 ### Set Variables
+
+<details open>
+
 ```
 USER = terra
 ```
@@ -121,7 +124,9 @@ LUNA_AMOUNT=
 1 LUNA = 1000000 uLUNA
 
 When we say LUNA AMOUNT, typically uLuna
-
+    
+</details>
+    
 ### Install Dependencies
 Login to USER.
 
