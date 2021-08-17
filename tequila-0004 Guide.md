@@ -461,7 +461,7 @@ fiatProvider: {
       timeout: 5000,
       // https://currencylayer.com/product
       // recommend: business subscription(60second Updates): $79.99/month
-      apiKey: 'fffe154e3f28482b9c95ae82942a27a4', // necessary
+      apiKey: '###', // necessary
     },
     bandprotocol: {
       // DKK is not supported for bandprotocol
@@ -482,7 +482,7 @@ fiatProvider: {
       timeout: 5000,
       // https://fixer.io/product
       // recommend: professional plus(60second Updates): $80/month
-      apiKey: '53ffecdae8919ece2c96de9e8c122516', // necessary
+      apiKey: '###', // necessary
     },
     alphavantage: {
       symbols: fiatSymbols,
@@ -490,7 +490,7 @@ fiatProvider: {
       timeout: 5000,
       // https://www.alphavantage.co/premium/
       // recommend: 120 API request per minute: $49.99/month
-      apiKey: 'S78O66J9WV9IURWJ', // necessary
+      apiKey: '###', // necessary
     },
   },
 ```
