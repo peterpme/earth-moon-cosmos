@@ -431,6 +431,12 @@ Create Oracle Wallet:
 - Oracle wallet mnemonic
 
 ```
+terracli keys add <oracle>
+
+terracli keys show <oracle>
+```
+
+```
 git clone https://github.com/terra-money/oracle-feeder && cd oracle-feeder/price-server && npm install
 ```
 
