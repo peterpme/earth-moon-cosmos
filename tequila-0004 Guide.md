@@ -33,6 +33,8 @@
 
 ### Create New User (only if necessary) 
 
+<details open>
+
 ```
 sudo apt update
 ```
@@ -60,8 +62,9 @@ sudo usermod -aG sudo $USER
 ```
 su - $USER
 ``` 
+</details>
 
-### Set Variables
+### Set Variables (optional)
 
 <details open>
 
@@ -69,7 +72,6 @@ su - $USER
 USER = terra
 ```
 The username of the ubuntu user. This step is only required for the creation of new user.
-
 
 ```
 MONIKER = terra-validator
@@ -137,6 +139,8 @@ sudo apt install -y build-essential wget liblz4-tool aria2 jq gcc g++ make aria2
 
 ### Install NodeJS and Yarn
 
+<details open>
+
 Installing it via apt-get without the below step will install an older version. You want to install Nodejs LTS always [(currently v14)](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
 ```
@@ -165,7 +169,11 @@ sudo apt install nodejs
 sudo npm i -g pm2
 ```
 
+</details>
+
 ### Install Go and golangcli-lint
+
+<details open>
 
 ```
 wget -c https://golang.org/dl/go1.16.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
@@ -192,8 +200,11 @@ export PATH=$PATH:/usr/local/go/bin
 ```
 source ~/.bashrc
 ```
+</details>
 
 ### Install Terra Core
+
+<details open>
 
 ```
 git clone https://github.com/terra-project/core/
@@ -210,6 +221,8 @@ git checkout v0.4.6
 ```
 make install
 ```
+
+</details>
 
 ### Prepare Node for Sync
 ```
