@@ -529,9 +529,8 @@ npm start vote -- \
    --chain-id tequila-0004 \
    --validator validator\
    --gas-prices 169.77ukrw \
-   --password "helloworld123"
+   --password "testnet123"
    --fees 30000uluna
-
 ```
 
 **Done!**
