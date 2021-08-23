@@ -289,6 +289,8 @@ curl https://network.terra.dev/testnet/addrbook.json > $HOME/.terrad/config/addr
 
 ### Begin pm2 Process Manager
 
+<details open>
+
 ```
 cd ~
 ```
@@ -326,7 +328,13 @@ Start pm2 process manager:
 ```
 pm2 start ./terra-node.ecosystem.config.js
 ```
+</details>
+
 ### Managing Node via pm2
+
+<details open>
+
+
 ```
 pm2 save
 ```
