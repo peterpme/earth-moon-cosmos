@@ -184,6 +184,10 @@ wget -c https://golang.org/dl/go1.16.6.linux-amd64.tar.gz -O - | sudo tar -xz -C
 curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sudo sh -s -- -b /usr/local/go/bin/ v1.41.1
 ```
 
+</details>
+
+
+
 ### Export Paths
 
 <details start>
