@@ -33,6 +33,8 @@
 
 ### Create New User (only if necessary) 
 
+<details open>
+
 ```
 sudo apt update
 ```
@@ -50,15 +52,23 @@ USER = <user>
 ```
 
 ```
-adduser -aG sudo -m -U $USER
+sudo adduser $USER
 ``` 
 
-### Set Variables
+```
+sudo usermod -aG sudo $USER
+``` 
+
+</details>
+
+### Set Variables (optional)
+
+<details open>
+
 ```
 USER = terra
 ```
 The username of the ubuntu user. This step is only required for the creation of new user.
-
 
 ```
 MONIKER = terra-validator
@@ -113,16 +123,24 @@ LUNA_AMOUNT=
 1 LUNA = 1000000 uLUNA
 
 When we say LUNA AMOUNT, typically uLuna
-
+    
+</details>
+    
 ### Install Dependencies
+
 Login to USER.
+
+<details open>
 
 ```
 sudo apt install -y build-essential wget liblz4-tool aria2 jq gcc g++ make aria2
 ```
 
+</details>
 
 ### Install NodeJS and Yarn
+
+<details open>
 
 Installing it via apt-get without the below step will install an older version. You want to install Nodejs LTS always [(currently v14)](https://github.com/nodesource/distributions/blob/master/README.md#debinstall):
 
@@ -152,7 +170,11 @@ sudo apt install nodejs
 sudo npm i -g pm2
 ```
 
+</details>
+
 ### Install Go and golangcli-lint
+
+<details open>
 
 ```
 wget -c https://golang.org/dl/go1.16.6.linux-amd64.tar.gz -O - | sudo tar -xz -C /usr/local
@@ -179,8 +201,11 @@ export PATH=$PATH:/usr/local/go/bin
 ```
 source ~/.bashrc
 ```
+</details>
 
 ### Install Terra Core
+
+<details open>
 
 ```
 git clone https://github.com/terra-project/core/
@@ -197,6 +222,8 @@ git checkout v0.4.6
 ```
 make install
 ```
+
+</details>
 
 ### Prepare Node for Sync
 ```
@@ -227,8 +254,11 @@ vim ~/.terrad/config/app.toml
 ```
 minimum-gas-prices = "0.01133uluna,0.15uusd,0.104938usdr,169.77ukrw,428.571umnt,0.125ueur,0.98ucny,16.37ujpy,0.11ugbp,10.88uinr,0.19ucad,0.14uchf,0.19uaud,0.2usgd,4.62uthb,1.25usek,1.25unok,1.25udkk”
 ```
+</details>
 
 ### Download Snapshot
+
+<details open>
 
 ```
 cd ~/.terrad
@@ -239,16 +269,23 @@ Get most recent snapshot from [Chainlayer Quicksync] (https://terra.quicksync.io
 ```
 aria2c -x5 https://get.quicksync.io/tequila-4-default.20210816.0940.tar.lz4 
 ```
+Unpacking may take a while - unsure if the command stops running (recommended to stop running after 3 hours max). 
 
 ```
 lz4 -c -d {SNAPSHOT_FILE} | tar xf -
 ```
 
+</details>
+
 ### Begin Node Sync
+
+<details open>
 
 ```
 curl https://network.terra.dev/testnet/addrbook.json > $HOME/.terrad/config/addrbook.json && terrad start
 ```
+
+</details>
 
 ### Begin pm2 Process Manager
 
