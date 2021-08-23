@@ -21,7 +21,7 @@
 
 
 ### OS/Hardware Requirements
-- Ubuntu 20.10 (Groovy Gorilla)
+- Ubuntu 20.04 or 20.10
 - AWS EC2 r5n xlarge
 - 4 cpu's
 - 32 GiB
@@ -186,6 +186,8 @@ curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/insta
 
 ### Export Paths
 
+<details start>
+
 ```
 vim ~/.bashrc
 ```
@@ -226,6 +228,10 @@ make install
 </details>
 
 ### Prepare Node for Sync
+
+<details open>
+
+
 ```
 cd ~
 ```
@@ -289,6 +295,8 @@ curl https://network.terra.dev/testnet/addrbook.json > $HOME/.terrad/config/addr
 
 ### Begin pm2 Process Manager
 
+<details start>
+
 ```
 cd ~
 ```
@@ -326,7 +334,14 @@ Start pm2 process manager:
 ```
 pm2 start ./terra-node.ecosystem.config.js
 ```
+
+</details>
+
+
 ### Managing Node via pm2
+
+<details open>
+
 ```
 pm2 save
 ```
@@ -349,8 +364,13 @@ Check to see if your node is catching up (should be false):
 curl -Ss localhost:26657/status | jq -er ".result.sync_info"
 ```
 
+</details>
+
+
 
 ### Register Validator Node
+
+<details open>
 
 Create Validator Wallet:
 
@@ -424,7 +444,12 @@ terracli tx staking create-validator \
 **Sometimes this might take a sec, code 19 doesn’t mean its broken (at least we think).
 **
 
+</details>
+
+
 ### Confirm Transactions for Validator
+
+<details open>
 
 This command should show your validator pub key:
 
@@ -432,8 +457,13 @@ This command should show your validator pub key:
 terracli query tendermint-validator-set | grep "$(terrad tendermint show-validator)"
 ```
 
+</details>
+
+
 
 ### Set up Feeder
+
+<details open>
 
 [Github Repo Here](https://github.com/terra-money/oracle-feeder).
 
@@ -457,7 +487,12 @@ terracli tx oracle set-feeder <feeder-address> --from <validator-name> --fees 30
 terracli tx send <validator-address> <feeder-address> <luna-amount>uluna --fees 30000uluna
 ```
 
+</details>
+
+
 ### Set up Oracle
+
+<details open>
 
 [Github Repo Here](https://github.com/terra-money/oracle-feeder/tree/main/feeder).
 
@@ -542,14 +577,23 @@ fiatProvider: {
 npm install @opentelemetry/api && npm run start
 ```
 
+</details>
+
 ### Set the Oracle Price Feeder
+
+<details open>
 
 ```
 terracli tx oracle set-feeder {ORACLE WALLET ADDRESS} --from={VALIDATOR_WALLET_NAME} --gas-prices="0.5uluna" --chain-id {CHAIN_ID}
 ```
 
+</details>
+
+
 
 ### Launch Feeder
+
+<details open>
 
 ```
 cd ~/oracle-feeder/feeder && npm install && npm start update-key
@@ -569,6 +613,9 @@ npm start vote -- \
    --password "testnet123" \
    --fees 30000uluna
 ```
+
+</details>
+
 
 **Done!**
 
