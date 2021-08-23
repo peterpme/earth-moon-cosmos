@@ -1,4 +1,4 @@
-# LUNA Validator Setup Guide (tequila-0004 Testnet)
+# LUNA Validator Setup Guide (Tequila-0004 Testnet)
 
 **LAST UPDATED:**
 
@@ -326,7 +326,7 @@ curl https://network.terra.dev/testnet/addrbook.json > $HOME/.terrad/config/addr
 
 ### Begin pm2 Process Manager
 
-<details start>
+
 
 ```
 cd ~
@@ -366,12 +366,10 @@ Start pm2 process manager:
 pm2 start ./terra-node.ecosystem.config.js
 ```
 
-</details>
-
-
 ### Managing Node via pm2
 
 <details open>
+
 
 ```
 pm2 save
