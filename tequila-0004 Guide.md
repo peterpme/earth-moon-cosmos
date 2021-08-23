@@ -1,4 +1,4 @@
-# LUNA Validator Setup Guide (tequila-0004 Testnet)
+# LUNA Validator Setup Guide (Tequila-0004 Testnet)
 
 **LAST UPDATED:**
 
