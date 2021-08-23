@@ -6,6 +6,33 @@
 
 - 12:32 PM PST
 
+### Table of Contents
+
+- [Similar Guides](#similar-guides)
+- [Important Columbus-5 & Bombay-09 Update](#important-columbus-5---bombay-09-update)
+- [OS/Hardware Requirements](#os-hardware-requirements)
+- [Ports](#ports)
+- [Create New User (only if necessary)](#create-new-user--only-if-necessary-)
+- [Set Variables (optional)](#set-variables--optional-)
+- [Install Dependencies](#install-dependencies)
+- [Install NodeJS and Yarn](#install-nodejs-and-yarn)
+- [Install Go and golangcli-lint](#install-go-and-golangcli-lint)
+- [Export Paths](#export-paths)
+- [Install Terra Core](#install-terra-core)
+- [Prepare Node for Sync](#prepare-node-for-sync)
+- [Download Snapshot](#download-snapshot)
+- [Begin Node Sync](#begin-node-sync)
+- [Begin pm2 Process Manager](#begin-pm2-process-manager)
+- [Managing Node via pm2](#managing-node-via-pm2)
+- [Register Validator Node](#register-validator-node)
+- [Confirm Transactions for Validator](#confirm-transactions-for-validator)
+- [Set up Feeder](#set-up-feeder)
+- [Set up Oracle](#set-up-oracle)
+- [Set the Oracle Price Feeder](#set-the-oracle-price-feeder)
+- [Launch Feeder](#launch-feeder)
+- [Need to Figure Out + Errors:](#need-to-figure-out---errors-)
+- [Notes](#notes)
+
 ### Similar Guides
 
 
@@ -629,7 +656,6 @@ npm start vote -- \
 
 - Error: error during handshake: error on replay: validator set is nil in genesis and still empty after InitChain
 
-### Troubleshooting
 - Error: - It is confirmed that if the staking amount is not enough then gentx will not generate the validator and it will lead to this error.
   Noticed this error here: https://github.com/terra-money/core/issues/131. By making sure you have the right genesis.json file set, this should go away.
 
