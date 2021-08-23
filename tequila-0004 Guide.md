@@ -2,9 +2,9 @@
 
 **LAST UPDATED:**
 
-- Aug 16, 2021
+- Aug 23, 2021
 
-- 3:21 PM PST
+- 12:32 PM PST
 
 ### Similar Guides
 
